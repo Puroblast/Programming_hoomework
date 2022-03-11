@@ -153,16 +153,3 @@ for i in range(len(line)):
     worksheet.update_cell(raw + 1,i+1,line[i])
     time.sleep(1.1)
 
-
-
-
-
-#correlation()
-
-
-
-
-
-
-
-#aproximation()
