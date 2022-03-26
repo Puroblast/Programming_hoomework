@@ -1,4 +1,5 @@
 import requests
+import matplotlib.pyplot as plt
 def regcoef(array1, array2):
     middlex = 0
     middley = 0
@@ -78,6 +79,10 @@ borya = 10000000
 tolya = 10000000
 andrey = 10000000
 getData()
+list3 = []
+list4 = []
+list5 = []
+kl = []
 for i in ID:
     prices1[i] = getReq(i)
 
@@ -135,38 +140,18 @@ for i in range(1,14):
         if prices1[v.split(":")[0]][str(i)][0] > prices1[v.split(":")[0]][str(i)][-1]:
             f2.pop(f2.index(v))
 
-    print(int(borya),int(tolya),int(andrey))
+    list3.append(int(borya))
+    list4.append(int(tolya))
+    list5.append(int(andrey))
+    kl.append(i)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fig = plt.plot(kl,list3,label="borya")
+plt.plot(kl,list4,label="tolya")
+plt.plot(kl,list5,label="andrey")
+plt.legend(fontsize=16.5,
+           ncol=1,
+           edgecolor='b',
+           title='Кривые',
+           title_fontsize='15')
+plt.show()
+print(list3,list4,list5,kl)
